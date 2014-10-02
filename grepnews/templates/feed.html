@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>{{feed._source.title}}</title>
+  </head>
+  <body>	
+      <h1>{{feed._source.title}}!</h1>
+	{% if feed._source.enclosures %}
+      <div><img src="{{feed._source.enclosures[0].url}}" alt=""> </div>
+	{% endif %}
+      <div>{{feed._source.description}}</div>
+  </body>
+</html>

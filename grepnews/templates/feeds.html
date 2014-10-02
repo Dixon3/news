@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+      <h1></h1>
+  {% for feed in feeds.hits.hits %}
+    <div class=flash>{{feed._source.feedname}}{{feed._source.publishedDate}} <a href='/feed/{{feed._id}}'> {{feed._source.title}}</a></div>
+  {% endfor %}	
+
+
+{% endblock %}
+
+
