@@ -14,8 +14,8 @@ lm.login_view = 'login'
 
 @lm.user_loader
 def load_user(userid):
-    print userid
-    user=users.User(userid,'')
+    user=users.User('','')
+    user=user.get(userid)
     return user
 
 

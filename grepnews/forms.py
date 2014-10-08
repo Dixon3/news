@@ -7,5 +7,5 @@ from wtforms.validators import Required
 
 class LoginForm(Form):
     username= TextField('user', validators = [Required()])
-    password= PasswordField('pqss', validators = [Required()])
+    password= PasswordField('pass', validators = [Required()])
     remember_me = BooleanField('remember_me', default = False)

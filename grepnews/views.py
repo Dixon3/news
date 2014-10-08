@@ -24,6 +24,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         # login and validate the user...
+        print form.username.data,dir(form.password),form.password.data
         user=users.User(form.username.data,form.password.data)
         login_user(user)
         flash("Logged in successfully.")
