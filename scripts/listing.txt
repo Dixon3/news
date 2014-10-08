@@ -1,0 +1,41 @@
+curl -XDELETE http://localhost:9200/users/
+curl -XPUT http://localhost:9200/users/
+curl -XPUT http://localhost:9200/users/user/_mapping -d '
+{
+        "properties": {
+            "category": {
+                "index": "not_analyzed",
+                "type": "string"
+            },
+            "description": {
+                "analyzer": "snowball",
+                "type": "string",
+                "store": true 
+            },
+            "email": {
+                "index": "not_analyzed",
+                "type": "string",
+                "store" : true
+            },
+            "password": {
+                "index": "not_analyzed",
+                "type": "string",
+                "store" : true
+            },
+            "username": {
+                "intex": "not_analyzed",
+                "type": "string",
+                "store" : true
+            }
+    }
+}
+'
+curl -XPUT http://localhost:9200/users/user/1 -d '
+{
+
+    "username" : "dixon3",
+    "description" : "Simple Test User",
+    "password" : "qwerty",
+    "email" : "test@test.com",
+    "category": "all"
+}'
